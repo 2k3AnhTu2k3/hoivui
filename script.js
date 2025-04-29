@@ -7,6 +7,8 @@ const buttonContainer = document.querySelector(".buttons");
 
 // Mảng chứa các câu hỏi
 const questions = [
+  "Xin chào Vân đến với chuyên mục 'Có' hoặc 'Không'. Mời Vân nhấn 'Không' để tiếp tục",
+  "Troll Vân vậy thôi hihihi, giờ Tú muốn có vài câu hỏi hỏi Vân. Vân đồng ý nha 😍",
   "Hello Vân, Vân có giận Tú chuyện hôm trước không? 😝",
   "Vân chấp nhận tha thứ cho Tú nhé 🥺🥺",
   "Cảm ơn Vân nhé, Vân nhấn CÓ để tiếp tục đi 😆😆",
