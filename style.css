@@ -1,49 +1,128 @@
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-align: center;
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
 }
 
 h1 {
+  color: #333;
   margin-bottom: 30px;
+  font-size: 1.8em;
+  line-height: 1.4;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
+  justify-content: center; /* Giữ các nút ở giữa */
+  align-items: center; /* Căn giữa theo chiều dọc nếu chiều cao khác nhau */
+  gap: 20px; /* Khoảng cách giữa các nút */
+  margin-top: 20px;
+  /* Không cần position: relative nữa nếu chỉ dùng transform */
+  /* height: 50px; Bỏ chiều cao cố định để linh hoạt hơn */
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 12px 25px;
+  font-size: 1.1em;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease; /* Thêm transition cho cả transform */
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
 }
 
-#yesBtn {
-  background-color: #28a745;
-  color: white;
+#yesButton {
   margin-right: 50px;
+  background-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Thêm z-index để đảm bảo nút "Có" luôn ở trên nếu nút "Không" di chuyển đè lên */
+  position: relative; /* Cần để z-index hoạt động */
+  z-index: 2;
 }
 
-#noBtn {
-  background-color: #dc3545;
-  color: white;
-  position: relative;
+#yesButton:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Giữ nguyên hiệu ứng phóng to */
+}
+
+#noButton {
+  background-color: #f44336;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* ---- THAY ĐỔI QUAN TRỌNG ---- */
+  /* Xóa position: absolute; */
+  /* Nút sẽ nằm theo flexbox bình thường */
+  /* Thêm transition cho transform để di chuyển mượt hơn */
+  transition: background-color 0.3s ease, transform 0.2s ease-out; /* Tách transition */
+  position: relative; /* Cần để z-index hoạt động */
+  z-index: 1; /* Thấp hơn nút "Có" */
+}
+
+#noButton:hover {
+  background-color: #e53935;
+  /* Hiệu ứng di chuyển sẽ do JS xử lý bằng transform */
+}
+
+#finalMessage {
+  margin-top: 40px;
+  color: #e91e63;
+}
+
+#finalMessage h2 {
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+#finalMessage img {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 25px;
+    width: 90%;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    min-width: 80px;
+  }
+  .buttons {
+    gap: 15px;
+    /* Có thể dùng flex-wrap nếu nút quá lớn trên màn hình nhỏ */
+    /* flex-wrap: wrap; */
+  }
+  #finalMessage h2 {
+    font-size: 1.3em;
+  }
 }
