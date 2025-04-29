@@ -3,9 +3,11 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
 const questions = [
-  "Vân có thích Tú không? 😝",
+  "Hello Vân, Vân có giận Tú chuyện hôm trước không? 😝",
+  "Vân chấp nhận tha thứ cho Tú nhé 🥺🥺",
+  "Cảm ơn Vân nhé, Vân nhấn CÓ để tiếp tục đi",
   "Vân muốn đi chơi với Tú không? 🎉",
-  "Vân muốn hẹn hò với Tú không? ❤️",
+  "Vân có thích Tú không? ❤️",
   "Vân chính là định mệnh của đời Tú đấy, đúng không? 😍",
 ];
 
@@ -22,7 +24,7 @@ yesBtn.addEventListener("click", () => {
     noBtn.style.left = "0px";
     noBtn.style.top = "0px";
   } else {
-    questionEl.innerText = "Hihi, mình biết mà! 🥰";
+    questionEl.innerText = "Hihi, Tú biết mà! IU VÂN 🥰";
     document.querySelector(".buttons").style.display = "none";
   }
 });
