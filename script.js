@@ -9,7 +9,7 @@ const buttonContainer = document.querySelector(".buttons");
 const questions = [
   "Hello Vân, Vân có giận Tú chuyện hôm trước không? 😝",
   "Vân chấp nhận tha thứ cho Tú nhé 🥺🥺",
-  "Cảm ơn Vân nhé, Vân nhấn CÓ để tiếp tục đi",
+  "Cảm ơn Vân nhé, Vân nhấn CÓ để tiếp tục đi 😆😆",
   "Vân muốn đi chơi với Tú không? 🎉",
   "Vân có thích Tú không? ❤️",
   "Vân chính là định mệnh của đời Tú đấy, đúng không? 😍",
